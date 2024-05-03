@@ -1,0 +1,8 @@
+{
+  "name": "nodejs_social",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/info09/NodeJS_Social.git",
+  "author": "DESKTOP-7EOCORJ\\admin <huytq@ics-p.vn>",
+  "license": "MIT"
+}
