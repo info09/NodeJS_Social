@@ -1,8 +1,20 @@
 {
   "name": "nodejs_social",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.ts",
   "repository": "https://github.com/info09/NodeJS_Social.git",
   "author": "DESKTOP-7EOCORJ\\admin <huytq@ics-p.vn>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon src/server.ts"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
 }
