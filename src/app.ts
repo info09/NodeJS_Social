@@ -21,7 +21,11 @@ class App {
 
     private connectToDatabase() {
         try {
-            const connectionString = 'mongodb+srv://huytq3103:RK199tLWX7lfjqEU@cluster0.3ozq9hc.mongodb.net/social_network?retryWrites=true&w=majority&appName=Cluster0';
+            const connectionString = process.env.MONGODB_URI;
+            if(!connectionString){
+                console.log('ConnectionString is invalid');
+                return;
+            }
             mongoose.connect(connectionString);
             console.log('Database connected...');
         } catch (error) {
