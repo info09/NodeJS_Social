@@ -1,11 +1,12 @@
-import { Route } from 'core/interfaces';
-import { Logger } from './core/utils';
+import { Route } from './core/interfaces';
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
 import hpp from 'hpp';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
+import { Logger } from './core/utils';
+import { errorMiddleware } from './core/middleware';
 
 class App {
     public app: express.Application;
@@ -52,6 +53,7 @@ class App {
             this.app.use(morgan('dev'));
             this.app.use(cors({ origin: true, credentials: true }));
         }
+        this.app.use(errorMiddleware);
     }
 
     private initializeRoutes(routes: Route[]) {
